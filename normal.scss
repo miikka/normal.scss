@@ -1,0 +1,54 @@
+/*
+	normal.scss - a CSS normalizer (cf. CSS reset).
+	
+	Provides a normalized environment for new designs and nice defaults for
+	styling simple documents.
+
+	Author: Miikka Koskinen <miikka.koskinen@iki.fi>
+*/
+
+$font-size:   1em !default;
+$line-height: 1.4em !default;
+$font-family: "Palatino", "Palatino Linotype", "Georgia", serif !default;
+
+/* Box model reset */
+
+* { margin: 0; padding: 0; border: 0; }
+
+/* Text styling */
+
+body {
+	font-size: $font-size;
+	line-height: $line-height;
+	font-family: $font-family;
+}
+
+@mixin rel-font-size($size, $lines) {
+	font-size:   $size;
+	line-height: 1em * $lines * ($line-height/$size);
+}
+
+h1, h2, h3 { 
+	font-weight: normal;
+}
+
+h1 {
+	@include rel-font-size(2.25em, 3);
+}
+
+h2 {
+	@include rel-font-size(1.5em, 2);
+}
+
+h3 {
+	@include rel-font-size(1em, 1);
+	font-variant: small-caps;
+}
+
+p, ul {
+	margin-bottom: $line-height;
+}
+
+li {
+	margin-left: 1em;
+}
