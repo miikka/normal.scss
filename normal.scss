@@ -52,3 +52,9 @@ p, ul, blockquote {
 li {
 	margin-left: 1em;
 }
+
+small {
+	@include rel-font-size(0.8em, 1);
+}
+
+/* vim: set ts=4 sw=4 noet: */
